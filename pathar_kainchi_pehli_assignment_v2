@@ -1,13 +1,25 @@
-
 // i am trying to see if i can separate master and branch. this should appear in branch only.
+
+/* ---------------------------------------------
+ * File: patharKaghazKainchi.java
+ * It's a simple game called Rock-Paper-Scissors: 
+ * coded by Saeed
+ * --------------------------------------------
+ * program flow sequence:
+ * 1- ask user how many rounds they want to play. (min 2, max 10 rounds - just to keep it simple)
+ * 2- ask user to input their choice - Rock, Paper, or Scissors.
+ * 3- get computer to make a counter choice randomly. (using a built-in Random method)
+ * 4- compare user-input vs computer-input and decide winner of the round. 
+ * 5- after final round, compare user vs computer score and declare winner of the match.  
+ */
 import acm.program.*;
 import java.util.*;
-public class rockPaperScissors extends ConsoleProgram 
+public class patharKaghazKainchi extends ConsoleProgram 
 {
-  public void run() {
+	public void run() {
 	setFont("verdana-bold-14"); // just so you can see it nice and bold//
 	println("Welcome to ROCK - PAPER - SCISSORS \t This game is coded by Saeed. "); pause(500);
-	println("Remember: Scissors cut Paper - Paper wraps Rock - Rock breaks Scissors. \n");
+	println("Remember: Scissors cut Paper - Paper wraps Rock - Rock breaks Scissors.");
 	
 	int userChoice=0;		// to get input from user  //
 	int pcChoice=0;  		// to get random input from computer//
@@ -33,7 +45,7 @@ public class rockPaperScissors extends ConsoleProgram
 		println("Your score:==>" + userScore + "\tComputer's score:==>" + pcScore);
 	}
 	pause(500);
-println("That was the last round. Thanks for playing. let's get the final score now:");
+println("\n That was the last round. Thanks for playing.");
 	pause(1000);
 
 	
@@ -43,8 +55,10 @@ if (userScore > pcScore) println ("===>> Well done. Aap Jeet Gaye yeh match. Aap
 
 }
 	
- private int get_userChoice(){
-		int i_userChoice= readInt ("Plz make your choice:\n 1-Rock;\t    2-Paper; \t   3-Scissors;     ");
+
+
+private int get_userChoice(){
+		int i_userChoice= readInt ("\nPlz make your choice:\n 1-Rock;\t    2-Paper; \t   3-Scissors;     ");
 		while (i_userChoice < 1 || i_userChoice > 3)
 			i_userChoice = readInt("Plz enter a valid choice. REMEMBER ( 1 for Rock, 2 for Paper, or 3 for Scissors): ");
 
@@ -54,9 +68,10 @@ if (userScore > pcScore) println ("===>> Well done. Aap Jeet Gaye yeh match. Aap
 		case 3:  print (" Your choice: 3-Scissors: <----vs----> "); 	break;
 		}
 		return(i_userChoice);
- 
- }
- private int get_pcChoice(){
+			 }
+
+
+private int get_pcChoice(){
 	// get a valid choice for computer using built-in java method of random number generator // 
 	 int i_pcChoice = 0;
 	 Random i_myDice= new Random();
@@ -69,9 +84,10 @@ if (userScore > pcScore) println ("===>> Well done. Aap Jeet Gaye yeh match. Aap
 		case 3:  println (" 3-Scissors: Computer's choice "); 	break;
 	 }
  return(i_pcChoice);
+			    }
  
-}
- private int scoreUpdater( int i_userChoice, int i_pcChoice)
+
+private int scoreUpdater( int i_userChoice, int i_pcChoice)
  {
  if (i_userChoice==i_pcChoice)   
  
